@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="RoomFormer" />
+    <meta name="keywords" content="RoomFormer, Floorplan, Two-level queries" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      AGILE3D: Attention Guided Interactive Multi-object 3D Segmentation
+    </title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+
+      gtag("config", "G-PYVRSFMDRL");
+    </script>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    />
+    <link rel="stylesheet" href="./static/css/index.css" />
+    <!-- <link rel="icon" href="./static/images/favicon.svg" /> -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <!-- <script src="./static/js/index.js"></script> -->
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                <span style="color: rgb(0, 100, 255)">AGILE3D</span>: <span style="color: rgb(0, 100, 255)">A</span>ttention <span style="color: rgb(0, 100, 255)">G</span>uided <span style="color: rgb(0, 100, 255)">I</span>nteractive Mu<span style="color: rgb(0, 100, 255)">l</span>ti-object <span style="color: rgb(0, 100, 255)">3D</span> S<span style="color: rgb(0, 100, 255)">e</span>gmentation
+              </h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="https://n.ethz.ch/~yuayue/">Yuanwen Yue</a
+                  ><sup>1,2</sup>,</span
+                >
+                <span class="author-block">
+                  <a href="https://www.vision.rwth-aachen.de/person/218/">Sabarinath Mahadevan</a
+                  ><sup>3</sup>,</span
+                >
+                <span class="author-block">
+                  <a href="https://jonasschult.github.io/">Jonas Schult</a
+                  ><sup>3</sup>,</span
+                >
+                <span class="author-block">
+                  <a href="https://francisengelmann.github.io/"
+                    >Francis Engelmann</a
+                  ><sup>2</sup>,
+                </span>
+                <br>
+                <span class="author-block">
+                  <a href="https://www.vision.rwth-aachen.de/person/1/">Bastian Leibe</a
+                  ><sup>3</sup>,</span
+                >
+                <span class="author-block">
+                  <a
+                    href="https://igp.ethz.ch/personen/person-detail.html?persid=143986"
+                    >Konrad Schindler</a
+                  ><sup>1,2</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://theodorakontogianni.github.io/"
+                    >Theodora Kontogianni</a
+                  ><sup>2</sup></span
+                >
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>Photogrammetry and Remote Sensing, ETH Zurich</span>
+                <span class="author-block"><sup>2</sup>ETH AI Center, ETH Zurich</span>
+                <span class="author-block"><sup>3</sup>Computer Vision Group, RWTH Aachen University</span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- PDF Link. -->
+                  <span class="link-block">
+                    <a
+                      href=""
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a
+                      href=""
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                  <!-- Video Link. -->
+                  <span class="link-block">
+                    <a
+                      href=""
+                      class="external-link button is-normal is-rounded is-dark" style="background-color: #96999B;"
+                    >
+                      <span class="icon">
+                        <i class="fab fa-youtube"></i>
+                      </span>
+                      <span>Video</span>
+                    </a>
+                  </span>
+                  <!-- Code Link. -->
+                  <span class="link-block">
+                    <a
+                      href="https://github.com/ywyue/AGILE3D"
+                      class="external-link button is-normal is-rounded is-dark" style="background-color: #96999B;"
+                    >
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop center">
+        <div class="hero-body" align="center">
+            <video width="600" autoplay loop muted>
+                <source src="https://n.ethz.ch/~yuayue/assets/agile3d/teaser.mp4" type="video/mp4" />
+                  <!-- <source src="movie.ogg" type="video/ogg" /> -->
+                  Your browser does not support the video tag.
+            </video>
+            <br><br>
+            <div class="content has-text-justified">
+              <p>
+                <b>AGILE3D</b> is a novel method for interactive <b>multi-object</b> 3D segmentation that supports (1) <b><i>Click sharing</i></b>: Clicks on one object are naturally utilized to segment other objects. (2) <b><i>Holistic reasoning</i></b>: AGILE3D captures the contextual relationships among objects. E.g., clicks on the armrest of one chair will also help correct the armrests of other chairs. (3) <b><i>Globally-consistent mask</i></b>: AGILE3D encourages different regions to
+                directly compete for space in the whole scene so that each point is assigned exactly one label. (4) <b><i>Fast inference</i></b>: AGILE3D can pre-compute backbone features once per scene and only run a light-weight mask decoder per iteration.
+              </p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                During interactive segmentation, a model and a user work together to delineate objects of interest in a 3D point cloud. In an iterative process, the model assigns each data point to an object (or the background), while the user corrects errors in the resulting segmentation and feeds them back into the model. From a machine learning perspective the goal is to design the model and the feedback mechanism in a way that minimizes the required user input. The current best practice segments objects one at a time, and asks the user to provide positive clicks to indicate regions wrongly assigned to the background and negative clicks to indicate regions wrongly assigned to the object (foreground). Sequentially visiting objects is wasteful, since it disregards synergies between objects: a positive click for a given object can, by definition, serve as a negative click for nearby objects, moreover a direct competition between adjacent objects can speed up the identification of their common boundary. We introduce AGILE3D, an efficient, attention-based model that (1) supports simultaneous segmentation of multiple 3D objects, (2) yields more accurate segmentation masks with fewer user clicks, and (3) offers faster inference. We encode the point cloud into a latent feature representation, and view user clicks as queries and employ cross-attention to represent contextual relations between different click locations as well as between clicks and the 3D point cloud features. Every time new clicks are added, we only need to run a lightweight decoder that produces updated segmentation masks. In experiments with four different point cloud datasets, AGILE3D sets a new state of the art, moreover, we also verify its practicality in real-world setups with a real user study.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--/ Abstract. -->
+
+        <section class="hero teaser">
+          <div class="container is-max-desktop center">
+            <div class="hero-body" align="center">
+              <h2 class="title is-3">Method</h2>
+                <video  autoplay loop muted>
+                  <source src="https://n.ethz.ch/~yuayue/assets/agile3d/model.mp4" type="video/mp4" />
+                  <!-- <source src="movie.ogg" type="video/ogg" /> -->
+                  Your browser does not support the video tag.
+                </video>
+                <div class="content has-text-justified">
+                  <p>
+                    Model of <b>AGILE3D</b>. Given a 3D scene and a user click sequence, (a) the feature backbone extracts per-point features and (b) the click-to-query module converts user clicks to semantically-aware spatial-temporal query vectors. (c) The mask decoder refines the point features and click queries through multiple attention mechanisms. (d) The mask prediction module first fuses the per-click mask logits to region-specific mask logits and then produces a final mask through a softmax.
+                  </p>
+                </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="hero teaser">
+          <div class="container is-max-desktop center">
+            <div class="hero-body" align="center">
+              <h2 class="title is-3">Open-world Interactive Segmentation</h2>
+                <div class="content has-text-justified">
+                  <p>
+                    Interactive object segmentation aims to generalize to data distributions beyond those seen in training. AGILE3D can obtain high-quality masks of novel objects (e.g., statue, phone) with a few user clicks.
+                  </p>
+                </div>
+                <div class="figrow">
+                  <div class="figcolumn">
+                    <figure class="cd-image-container">
+                      <img src="assets/statue_scene.png" alt="Original Image">
+                      <span class="cd-image-label" data-type="original">
+                      </span>
+
+                      <div class="cd-resize-img"> <!-- the resizable image on top -->
+                        <img src="assets/statue_mask.png" alt="Modified Image">
+                        <span class="cd-image-label" data-type="modified">
+                        </span>
+                      </div>
+
+                      <span class="cd-handle"></span>
+                    </figure> <!-- cd-image-container -->
+                  </div>
+                  <div class="figcolumn">
+                    <figure class="cd-image-container">
+                      <img src="assets/phone_scene.png" alt="Original Image">
+                      <span class="cd-image-label" data-type="original">
+                      </span>
+
+                      <div class="cd-resize-img"> <!-- the resizable image on top -->
+                        <img src="assets/phone_mask.png" alt="Modified Image">
+                        <span class="cd-image-label" data-type="modified">
+                        </span>
+                      </div>
+
+                      <span class="cd-handle"></span>
+                    </figure> <!-- cd-image-container -->
+                  </div>
+                </div>
+
+
+            </div>
+          </div>
+        </section>
+
+        <section class="hero teaser">
+          <div class="container is-max-desktop center">
+            <div class="hero-body" align="center">
+              <h2 class="title is-3">Annotation Tool</h2>
+              <div class="content has-text-justified">
+                <p>
+                  We developed a user inferface and show the comparsion of the annotation process between AGILE3D and InterObject3D++. To annotate the same 6 objects, AGIL3D can annoate them simutenously, thus speeding up the annotation process and also easing the user interaction. By contrast, InterObject3D++ can only segment each object one by one, requiring significant longer time than our method.
+                </p>
+              </div>
+              <video controls muted>
+                <source src="https://n.ethz.ch/~yuayue/assets/agile3d/demo.mp4" type="video/mp4" />
+                  <!-- <source src="movie.ogg" type="video/ogg" /> -->
+                     Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">Citation</h2>
+        <pre><code>@inproceedings{yue2023agile3d,
+  title     = {{AGILE3D: Attention Guided Interactive Multi-object 3D Segmentation}},
+  author    = {Yue, Yuanwen and Mahadevan, Sabarinath and Schult, Jonas and Engelmann, Francis and Leibe, Bastian and Schindler, Konrad and Kontogianni, Theodora},
+  booktitle = {arXiv preprint},
+  year      = {2023}
+}</code></pre>
+      </div>
+    </section>
+
+    <section class="section" id="Acknowledgment">
+      <div class="container is-max-desktop content">
+        <h2 class="title">Acknowledgment</h2>
+        We sincerely thank all volunteers who participated in our user study. Francis Engelmann and Theodora Kontogianni are postdoctoral research fellows at the ETH AI Center. This project is partially funded by the ETH Career Seed Award - Towards Open-World 3D Scene Understanding, NeuroSys-D (03ZU1106DA) and BMBF projects 6GEM (16KISK036K).
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content" align="center">
+              <p>
+                This website is licensed under a
+                <a
+                  rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/"
+                  >Creative Commons Attribution-ShareAlike 4.0 International
+                  License</a
+                >.
+              </p>
+              <p>
+                It borrows the source code of
+                <a href="https://github.com/nerfies/nerfies.github.io"
+                  >this website</a
+                >. We would like to thank Utkarsh Sinha and Keunhong Park.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="js/jquery-2.1.1.js"></script>
+  <script src="js/jquery.mobile.custom.min.js"></script> <!-- Resource jQuery -->
+  <script src="js/main.js"></script> <!-- Resource jQuery -->
+</html>
