@@ -6,8 +6,21 @@
 <sup>2</sup>ETH AI Center, ETH Zurich <br>
 <sup>3</sup>Computer Vision Group, RWTH Aachen University
 
+<img src="./imgs/teaser.gif" width="500"/>
+
 </div>
 
-This repository will provide code, data and pretrained models for **AGILE3D**, a novel method for interactive multi-object 3D segmentation.
+This repository will host code, data and pretrained models for **AGILE3D**, a novel method for interactive multi-object 3D segmentation. **_Stay tuned!_**
 
-[[Project Webpage](https://ywyue.github.io/AGILE3D/)]    [[Paper]()]
+[[Project Webpage](https://ywyue.github.io/AGILE3D/)]    [[Paper](https://arxiv.org/abs/2306.00977)]
+
+
+## Citation
+```
+@inproceedings{yue2023agile3d,
+  title     = {{AGILE3D: Attention Guided Interactive Multi-object 3D Segmentation}},
+  author    = {Yue, Yuanwen and Mahadevan, Sabarinath and Schult, Jonas and Engelmann, Francis and Leibe, Bastian and Schindler, Konrad and Kontogianni, Theodora},
+  booktitle = {arXiv preprint arXiv:2306.00977},
+  year      = {2023}
+}
+```
