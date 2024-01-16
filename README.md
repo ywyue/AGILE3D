@@ -14,13 +14,16 @@ This repository will host code, data and pretrained models for **AGILE3D**, a no
 
 [[Project Webpage](https://ywyue.github.io/AGILE3D/)]    [[Paper](https://arxiv.org/abs/2306.00977)]
 
+## News :loudspeaker:
+
+- [2024/01/16] AGILE3D was accepted to ICLR 2024 :tada: Code is expected to be released before the end of January 2024.
 
 ## Citation
 ```
 @inproceedings{yue2023agile3d,
   title     = {{AGILE3D: Attention Guided Interactive Multi-object 3D Segmentation}},
   author    = {Yue, Yuanwen and Mahadevan, Sabarinath and Schult, Jonas and Engelmann, Francis and Leibe, Bastian and Schindler, Konrad and Kontogianni, Theodora},
-  booktitle = {arXiv preprint arXiv:2306.00977},
-  year      = {2023}
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2024}
 }
 ```
