@@ -134,7 +134,7 @@
                       <span class="icon">
                         <i class="fab fa-github"></i>
                       </span>
-                      <span>Code (Coming soon!)</span>
+                      <span>Code</span>
                     </a>
                   </span>
                   <!-- Video Link. -->
@@ -212,64 +212,47 @@
         <section class="hero teaser">
           <div class="container is-max-desktop center">
             <div class="hero-body" align="center">
-              <h2 class="title is-3">Open-world Interactive Segmentation</h2>
-                <div class="content has-text-justified">
-                  <p>
-                    Interactive object segmentation aims to generalize to data distributions beyond those seen in training. AGILE3D can obtain high-quality masks of novel objects (e.g., statue, phone) with a few user clicks.
-                  </p>
-                </div>
-                <div class="figrow">
-                  <div class="figcolumn">
-                    <figure class="cd-image-container">
-                      <img src="assets/statue_scene.png" alt="Original Image">
-                      <span class="cd-image-label" data-type="original">
-                      </span>
-
-                      <div class="cd-resize-img"> <!-- the resizable image on top -->
-                        <img src="assets/statue_mask.png" alt="Modified Image">
-                        <span class="cd-image-label" data-type="modified">
-                        </span>
-                      </div>
-
-                      <span class="cd-handle"></span>
-                    </figure> <!-- cd-image-container -->
-                  </div>
-                  <div class="figcolumn">
-                    <figure class="cd-image-container">
-                      <img src="assets/phone_scene.png" alt="Original Image">
-                      <span class="cd-image-label" data-type="original">
-                      </span>
-
-                      <div class="cd-resize-img"> <!-- the resizable image on top -->
-                        <img src="assets/phone_mask.png" alt="Modified Image">
-                        <span class="cd-image-label" data-type="modified">
-                        </span>
-                      </div>
-
-                      <span class="cd-handle"></span>
-                    </figure> <!-- cd-image-container -->
-                  </div>
-                </div>
-
-
-            </div>
-          </div>
-        </section>
-
-        <section class="hero teaser">
-          <div class="container is-max-desktop center">
-            <div class="hero-body" align="center">
-              <h2 class="title is-3">Annotation Tool</h2>
+              <h2 class="title is-3">Interactive Segmentation Tool</h2>
               <div class="content has-text-justified">
                 <p>
-                  We developed a user interface and show the comparison of the annotation process between AGILE3D and InterObject3D++. To annotate the same 6 objects, AGILE3D can annotate them simultaneously, thus speeding up the annotation process and also easing user interaction. By contrast, InterObject3D++ can only segment each object one by one, requiring significantly longer time than our method.
+                  We provide an interactive tool that allows users to segment/annotate multiple 3D objects together, in an <b>open-world setting</b>. Although the model was only trained on ScanNet training set, it can be used to segment unseen datasets like S3DIS, ARKitScenes, and even outdoor scans like KITTI-360. <b>Feel free to try your own scans!</b>
                 </p>
               </div>
               <video controls muted>
-                <source src="https://n.ethz.ch/~yuayue/assets/agile3d/demo.mp4" type="video/mp4" />
+                <source src="https://n.ethz.ch/~yuayue/assets/agile3d/scannet_demo.mp4" type="video/mp4" />
                   <!-- <source src="movie.ogg" type="video/ogg" /> -->
                      Your browser does not support the video tag.
               </video>
+              <div align="center">
+                <b>ScanNet</b>
+              </div>
+              <br>
+              <video controls muted>
+                <source src="https://n.ethz.ch/~yuayue/assets/agile3d/arkit_demo.mp4" type="video/mp4" />
+                  <!-- <source src="movie.ogg" type="video/ogg" /> -->
+                     Your browser does not support the video tag.
+              </video>
+              <div align="center">
+                <b>ARKitScenes</b>
+              </div>
+              <br>
+              <video controls muted>
+                <source src="https://n.ethz.ch/~yuayue/assets/agile3d/s3dis_demo.mp4" type="video/mp4" />
+                  <!-- <source src="movie.ogg" type="video/ogg" /> -->
+                     Your browser does not support the video tag.
+              </video>
+              <div align="center">
+                <b>S3DIS</b>
+              </div>
+              <br>
+              <video controls muted>
+                <source src="https://n.ethz.ch/~yuayue/assets/agile3d/kitti360_demo.mp4" type="video/mp4" />
+                  <!-- <source src="movie.ogg" type="video/ogg" /> -->
+                     Your browser does not support the video tag.
+              </video>
+              <div align="center">
+                <b>KITTI-360</b>
+              </div>
             </div>
           </div>
         </section>
