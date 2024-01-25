@@ -72,7 +72,7 @@ Please follow this [this instruction](https://github.com/ywyue/AGILE3D/tree/main
 <img src="./imgs/demo.gif" width="75%" />
 </p>
 
-We present an **interactive** tool that allows users to segment/annotate **multiple 3D objects** together, in an **open-world** setting. Although our work focuses on multi-object cases, this tool can also support interactive single-object segmentation seamlessly. Although the model was only trained on ScanNet, it can also segment unseen datasets like S3DIS, ARKitScenes, and even outdoor scans like KITTI-360. Please check the [project page](https://ywyue.github.io/AGILE3D/) for more demos. Also try your own scans :smiley:
+We present an **interactive** tool that allows users to segment/annotate **multiple 3D objects** together, in an **open-world** setting. Although our work focuses on multi-object cases, this tool can also support interactive single-object segmentation seamlessly. Although the model was only trained on ScanNet training set, it can also segment unseen datasets like S3DIS, ARKitScenes, and even outdoor scans like KITTI-360. Please check the [project page](https://ywyue.github.io/AGILE3D/) for more demos. Also try your own scans :smiley:
 
 ## Training :rocket:
 
@@ -100,4 +100,4 @@ If you find our code or paper useful, please cite:
 **We sincerely thank all volunteers who participated in our user study!** Francis Engelmann and Theodora Kontogianni are postdoctoral research fellows at the ETH AI Center. This project is partially funded by the ETH Career Seed Award - Towards Open-World 3D Scene Understanding,
 NeuroSys-D (03ZU1106DA) and BMBF projects 6GEM (16KISK036K).
 
-Parts of our code are built on top of [Mask3D](https://github.com/JonasSchult/Mask3D) and [InterObject3D](https://github.com/theodorakontogianni/InterObject3D).
+Parts of our code are built on top of [Mask3D](https://github.com/JonasSchult/Mask3D) and [InterObject3D](https://github.com/theodorakontogianni/InterObject3D). We also thank Anne Marx for the help in the initial version of the GUI.
