@@ -33,8 +33,8 @@
 
 ## TODO :memo:
 - :white_check_mark: Release pretrained model and our interactive segmentation tool
-- :white_large_square: Release training and evaluation code (Expected before 31 January)
-- :white_large_square: Release benchmark setup (Expected before 31 January)
+- :white_large_square: Release training and evaluation code (Expected before ~~31 January~~ 5 February)
+- :white_large_square: Release benchmark setup (Expected before ~~31 January~~ 5 February)
 
 <details open="open" style='padding: 10px; border-radius:5px 30px 30px 5px; border-style: solid; border-width: 1px;'>
   <summary>Table of Contents</summary>
