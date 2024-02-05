@@ -1,7 +1,7 @@
 # Interactive 3D segmentation tool
 
 <p align="center">
-<img src="./imgs/demo.gif" width="75%" />
+<img src="../imgs/demo.gif" width="75%" />
 </p>
 
 We present an **interactive tool** that allows users to segment/annotate multiple 3D objects together, in an **open-world** setting. Although our work focuses on multi-object cases, this tool can also support interactive single-object segmentation seamlessly. We provide several sample scans below but you are highly encouraged to try your own scans! 

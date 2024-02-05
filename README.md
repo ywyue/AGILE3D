@@ -42,7 +42,7 @@
       <a href="#interactive-tool-video_game">Interactive Tool</a>
     </li>
     <li>
-      <a href="#benchmark_setup-dart">Benchmark Setup</a>
+      <a href="#benchmark-setup-dart">Benchmark Setup</a>
     </li>
     <li>
       <a href="#training-rocket">Training</a>
@@ -65,7 +65,7 @@ Please follow the [installation.md](https://github.com/ywyue/AGILE3D/tree/main/i
 
 ## Interactive Tool :video_game:
 
-Please follow this [this instruction](https://github.com/ywyue/AGILE3D/tree/main/demo.md) to play with the interactive tool yourself.
+Please follow this [this instruction](https://github.com/ywyue/AGILE3D/tree/main/interactive_tool) to play with the interactive tool yourself.
 
 <p align="center">
 <img src="./imgs/demo.gif" width="75%" />
