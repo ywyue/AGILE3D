@@ -26,9 +26,9 @@ def get_args_parser():
 
     # dataset
     parser.add_argument('--dataset_mode', default='multi_obj')
-    parser.add_argument('--scan_folder', default='/cluster/work/igp_psr/yuayue/thesis/backup/reproduce/Inter3D/data/preprocess_correct', type=str)
-    parser.add_argument('--train_list', default='/cluster/scratch/yuayue/thesis/release/AGILE3D_release/data/ScanNet/train_samples_OnlineEachScene.json', type=str)
-    parser.add_argument('--val_list', default='/cluster/work/igp_psr/yuayue/thesis/backup/reproduce/Inter3D/data/val_scannet_randomEachScene_max10_close.json', type=str)
+    parser.add_argument('--scan_folder', default='data/ScanNet/scans', type=str)
+    parser.add_argument('--train_list', default='data/ScanNet/train_list.json', type=str)
+    parser.add_argument('--val_list', default='data/ScanNet/val_list.json', type=str)
     
 
     # model
@@ -76,7 +76,6 @@ def get_args_parser():
     parser.add_argument('--start_epoch', default=0, type=int, metavar='N',
                         help='start epoch')
     parser.add_argument('--num_workers', default=2, type=int)
-    # parser.add_argument('--resume', default='output/2023-05-14-11-45-18/checkpoint1099.pth', help='resume from checkpoint')
     parser.add_argument('--resume', default='', help='resume from checkpoint')
     parser.add_argument('--max_num_clicks', default=20, help='maximum number of clicks per object on average', type=int)
 
