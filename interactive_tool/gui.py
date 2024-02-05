@@ -4,7 +4,7 @@ import open3d.visualization.rendering as rendering
 import os
 import numpy as np
 import time
-from interactive_segmentation.utils import get_obj_color, OBJECT_CLICK_COLOR, BACKGROUND_CLICK_COLOR, UNSELECTED_OBJECTS_COLOR, SELECTED_OBJECT_COLOR, find_nearest
+from interactive_tool.utils import get_obj_color, OBJECT_CLICK_COLOR, BACKGROUND_CLICK_COLOR, UNSELECTED_OBJECTS_COLOR, SELECTED_OBJECT_COLOR, find_nearest
 import torch
 
 

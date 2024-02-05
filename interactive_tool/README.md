@@ -38,7 +38,7 @@ Here we provide some samples from ScanNet, S3DIS, KITTI-360 (with label) and sam
 ### Step 3: run the tool
 Run the UI using the following command:
 ```shell
-python run_ui.py --user_name=test_user --pretraining_weights=weights/checkpoint1099.pth --dataset_scenes=data/interactive_dataset
+python run_UI.py --user_name=test_user --pretraining_weights=weights/checkpoint1099.pth --dataset_scenes=data/interactive_dataset
 ```
 <details>
 <summary><span style="font-weight: bold;">Important Command Line Arguments for run_ui.py</span></summary>

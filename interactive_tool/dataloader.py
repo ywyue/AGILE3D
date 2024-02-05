@@ -1,7 +1,7 @@
 import os
 import numpy as np
 import open3d as o3d
-from interactive_segmentation.ply import read_ply
+from utils.ply import read_ply
 
 class InteractiveDataLoader:
     """

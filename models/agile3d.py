@@ -1,3 +1,7 @@
+# ------------------------------------------------------------------------
+# Yuanwen Yue
+# ETH Zurich
+# ------------------------------------------------------------------------
 import torch
 import torch.nn as nn
 import MinkowskiEngine.MinkowskiOps as me

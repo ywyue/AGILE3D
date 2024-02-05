@@ -1,5 +1,4 @@
 # Modified from:
-
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 """
 Various positional encodings for the transformer.

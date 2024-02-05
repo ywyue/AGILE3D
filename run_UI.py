@@ -1,11 +1,13 @@
-# AGILE3D
-# https://github.com/ywyue/AGILE3D
+# ------------------------------------------------------------------------
+# Yuanwen Yue
+# ETH Zurich
+# ------------------------------------------------------------------------
 
 import argparse
 import torch
-from interactive_segmentation.utils import *
-from interactive_segmentation.interactive_segmentation_user import UserInteractiveSegmentationModel
-from interactive_segmentation.dataloader import InteractiveDataLoader
+from interactive_tool.utils import *
+from interactive_tool.interactive_segmentation_user import UserInteractiveSegmentationModel
+from interactive_tool.dataloader import InteractiveDataLoader
 
 def main(_):
     device = torch.device('cuda' if (torch.cuda.is_available()) else 'cpu')

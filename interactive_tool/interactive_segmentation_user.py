@@ -1,9 +1,9 @@
-from interactive_segmentation.gui import InteractiveSegmentationGUI
+from interactive_tool.gui import InteractiveSegmentationGUI
 import abc
 from datetime import datetime
 import numpy as np
 import os
-from interactive_segmentation.utils import *
+from interactive_tool.utils import *
 import MinkowskiEngine as ME
 
 from models import build_model
