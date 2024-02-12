@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-python main.py --dataset_mode=multi_obj
+python main.py --dataset_mode=multi_obj \
                --scan_folder=data/ScanNet/scans \
                --train_list=data/ScanNet/train_list.json \
                --val_list=data/ScanNet/val_list.json \

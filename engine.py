@@ -251,6 +251,7 @@ def evaluate(model, criterion, data_loader, args, epoch, device):
                 sample_mask = batch_idx == idx
                 sample_pred = pred[idx]
 
+                sample_mask = sample_mask.to(feats.device)  # Move sample_mask to the same device as feats
                 sample_feats = feats[sample_mask]
 
                 if current_num_clicks != 0:
