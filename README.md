@@ -61,11 +61,11 @@
 
 ## Installation :hammer:
 
-Please follow the [installation.md](https://github.com/ywyue/AGILE3D/tree/main/installation.md) to set up the environments.
+Foe training and evaluation, please follow the [installation.md](https://github.com/ywyue/AGILE3D/tree/main/installation.md) to set up the environments.
 
 ## Interactive Tool :video_game:
 
-Please follow [this instruction](https://github.com/ywyue/AGILE3D/tree/main/demo.md) to play with the interactive tool yourself.
+Please follow [this instruction](https://github.com/ywyue/AGILE3D/tree/main/demo.md) to play with the interactive tool yourself.  **It also works without GPU.**
 
 <p align="center">
 <img src="./imgs/demo.gif" width="75%" />

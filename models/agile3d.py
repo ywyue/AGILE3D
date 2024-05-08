@@ -143,7 +143,12 @@ class Agile3d(nn.Module):
 
         for i in range(len(coords)):
             pos_encodings_pcd.append([[]])
-            for coords_batch in coords[i].decomposed_features:
+            ### this is a trick to bypass a bug in Minkowski Engine cpu version
+            if coords[i].F.is_cuda:
+                coords_batches = coords[i].decomposed_features
+            else:
+                coords_batches = [coords[i].F]
+            for coords_batch in coords_batches:
                 scene_min = coords_batch.min(dim=0)[0][None, ...]
                 scene_max = coords_batch.max(dim=0)[0][None, ...]
 
@@ -186,8 +191,13 @@ class Agile3d(nn.Module):
 
         for b in range(batch_size):
 
-            mins = coordinates.decomposed_features[b].min(dim=0)[0].unsqueeze(0)
-            maxs = coordinates.decomposed_features[b].max(dim=0)[0].unsqueeze(0)
+            if coordinates.F.is_cuda():
+                mins = coordinates.decomposed_features[b].min(dim=0)[0].unsqueeze(0)
+                maxs = coordinates.decomposed_features[b].max(dim=0)[0].unsqueeze(0)
+            else:
+                mins = coordinates.F.min(dim=0)[0].unsqueeze(0)
+                maxs = coordinates.F.max(dim=0)[0].unsqueeze(0)
+
 
             click_idx_sample = click_idx[b]
             click_time_idx_sample = click_time_idx[b]
@@ -200,8 +210,13 @@ class Agile3d(nn.Module):
             fg_query_num_split = [len(click_idx_sample[str(i)]) for i in range(1, fg_obj_num+1)]
             fg_query_num = sum(fg_query_num_split)
 
-            fg_clicks_coords = torch.vstack([coordinates.decomposed_features[b][click_idx_sample[str(i)], :]
-                                       for i in range(1,fg_obj_num+1)]).unsqueeze(0)
+            if coordinates.F.is_cuda:
+                fg_clicks_coords = torch.vstack([coordinates.decomposed_features[b][click_idx_sample[str(i)], :]
+                                        for i in range(1,fg_obj_num+1)]).unsqueeze(0)
+            else:
+                fg_clicks_coords = torch.vstack([coordinates.F[click_idx_sample[str(i)], :]
+                                        for i in range(1,fg_obj_num+1)]).unsqueeze(0)
+
             fg_query_pos = self.pos_enc(fg_clicks_coords.float(),
                                      input_range=[mins, maxs]
                                      )
@@ -211,7 +226,10 @@ class Agile3d(nn.Module):
             fg_query_pos = fg_query_pos + fg_query_time
 
             if len(bg_click_idx)!=0:
-                bg_click_coords = coordinates.decomposed_features[b][bg_click_idx].unsqueeze(0)
+                if coordinates.F.is_cuda:
+                    bg_click_coords = coordinates.decomposed_features[b][bg_click_idx].unsqueeze(0)
+                else:
+                    bg_click_coords = coordinates.F[bg_click_idx].unsqueeze(0)
                 bg_query_pos = self.pos_enc(bg_click_coords.float(),
                                         input_range=[mins, maxs]
                                         )  # [num_queries, 128]
@@ -227,17 +245,28 @@ class Agile3d(nn.Module):
 
             bg_query_num = bg_query_pos.shape[0]
             # with torch.no_grad():
-            fg_queries = torch.vstack([pcd_features.decomposed_features[b][click_idx_sample[str(i)], :]
-                                       for i in range(1,fg_obj_num+1)])
+
+            if pcd_features.F.is_cuda:
+                fg_queries = torch.vstack([pcd_features.decomposed_features[b][click_idx_sample[str(i)], :]
+                                           for i in range(1,fg_obj_num+1)])
+            else:
+                fg_queries = torch.vstack([pcd_features.F[click_idx_sample[str(i)], :]
+                                           for i in range(1,fg_obj_num+1)])
 
             if len(bg_click_idx)!=0:
                 # with torch.no_grad():
-                bg_queries = pcd_features.decomposed_features[b][bg_click_idx,:]
+                if pcd_features.F.is_cuda:
+                    bg_queries = pcd_features.decomposed_features[b][bg_click_idx,:]
+                else:
+                    bg_queries = pcd_features.F[bg_click_idx,:]
                 bg_queries = torch.cat([bg_learn_queries[b], bg_queries], dim=0)
             else:
                 bg_queries = bg_learn_queries[b]
 
-            src_pcd = pcd_features.decomposed_features[b]
+            if pcd_features.F.is_cuda:
+                src_pcd = pcd_features.decomposed_features[b]
+            else:
+                src_pcd = pcd_features.F
 
             refine_time = 0
 

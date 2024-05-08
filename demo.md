@@ -6,7 +6,10 @@
 
 We present an **interactive tool** that allows users to segment/annotate multiple 3D objects together, in an **open-world** setting. Although our work focuses on multi-object cases, this tool can also support interactive single-object segmentation seamlessly. We provide several sample scans below but you are highly encouraged to try your own scans! 
 
-We assume you already set up the environments properly following [installation.md](https://github.com/ywyue/AGILE3D/tree/main/installation.md).
+Before you start:
+
+- If GPU is available, we assume you already set up the environments properly following [installation.md](https://github.com/ywyue/AGILE3D/tree/main/installation.md).
+- If only CPU is available, please set up the environments following [installation_cpu.md](https://github.com/ywyue/AGILE3D/tree/main/installation_cpu.md).
 
 ### Step 1: download pretained model
 Download the [**model**](https://polybox.ethz.ch/index.php/s/RnB1o8X7g1jL0lM) and move it to the ```weights``` folder.
