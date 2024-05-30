@@ -191,7 +191,7 @@ class Agile3d(nn.Module):
 
         for b in range(batch_size):
 
-            if coordinates.F.is_cuda():
+            if coordinates.F.is_cuda:
                 mins = coordinates.decomposed_features[b].min(dim=0)[0].unsqueeze(0)
                 maxs = coordinates.decomposed_features[b].max(dim=0)[0].unsqueeze(0)
             else:
