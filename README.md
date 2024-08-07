@@ -77,7 +77,7 @@ We present an **interactive** tool that allows users to segment/annotate **multi
 
 We conduct evaluation in both *interactive single-object 3D segmentation* and *interactive multi-object 3D segmentation*. For the former, we adopt the protocol from [InterObject3D](https://github.com/theodorakontogianni/InterObject3D). For the latter, we propose our own setup since there was no prior work.
 
-Our quantitative evaluation involves the following datasets: ScanNet (inc. ScanNet40 and ScanNet20), S3DIS and KITTI-360. We provide the processed data in the required format for both benchmarks. You can download the data from [here](https://drive.google.com/file/d/1cqWgVlwYHRPeWJB-YJdz-mS5njbH4SnG/view?usp=sharing). Please unzip them to the `data` folder.
+Our quantitative evaluation involves the following datasets: ScanNet (inc. ScanNet40 and ScanNet20), S3DIS and KITTI-360. We provide the processed data in the required format for both benchmarks. You can download the data from [Google Drive](https://drive.google.com/file/d/1cqWgVlwYHRPeWJB-YJdz-mS5njbH4SnG/view?usp=sharing). If Google Drive does not work for you, the data can also be downloaded from [here](https://polybox.ethz.ch/index.php/s/vW5GtSDlf86k2Td). Please unzip them to the `data` folder.
 
 If you want to learn more about the benchmark setup, explanations for the processed data, and data processing scripts, see the 
 [benchmark document](https://github.com/ywyue/AGILE3D/tree/main/benchmark/README.md).
