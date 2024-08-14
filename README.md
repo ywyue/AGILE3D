@@ -97,7 +97,7 @@ The command for training AGILE3D with iterative training on ScanNet40 is as foll
 
 ## Evaluation :chart_with_upwards_trend:
 
-Download the pretrained [model](https://polybox.ethz.ch/index.php/s/RnB1o8X7g1jL0lM) and move it to the `weights` folder.
+We provide the csv result files in the [results](https://github.com/ywyue/AGILE3D/tree/main/results) folder, which can be directly fed into the evaluator for metric calculation. If you want to run the inference and do the evaluation yourself, download the pretrained [model](https://polybox.ethz.ch/index.php/s/RnB1o8X7g1jL0lM) and move it to the `weights` folder. Then run:
 
 ### Evaluation on interactive multi-object 3D segmentation:
 
