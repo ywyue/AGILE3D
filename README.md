@@ -129,7 +129,17 @@ We provide the csv result files in the [results](https://github.com/ywyue/AGILE3
 ./scripts/eval_single_kitti360.sh
 ```
 
+### Compute AP scores for interactive single-object 3D segmentation:
+In Tab. 3 in our main paper, we also report AP scores of AGILE3D in comparison with Mask3D. To reproduce our results, run:
+- ScanNet20 seen classes:
+```shell
+python compute_ap.py --result_file=results/our_single_scannet20_seen.csv
+```
 
+- ScanNet20 unseen classes:
+```shell
+python compute_ap.py --result_file=results/our_single_scannet20_unseen.csv
+```
 ## Citation :mortar_board:
 
 If you find our code or paper useful, please cite:
