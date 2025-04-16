@@ -47,8 +47,11 @@ class InterMultiObj3DSegDataset(Dataset):
         num_obj = int(num_obj)
 
         point_cloud = read_ply(os.path.join(self.scan_folder, scene_name + '.ply'))
-        
-        coords_full = np.column_stack([point_cloud['x'], point_cloud['y'], point_cloud['z']]).astype(np.float64)
+        coords_x = point_cloud['x'] - point_cloud['x'].min()
+        coords_y = point_cloud['y'] - point_cloud['y'].min()
+        coords_z = point_cloud['z'] - point_cloud['z'].min()
+
+        coords_full = np.column_stack([coords_x, coords_y, coords_z]).astype(np.float32)
         colors_full = np.column_stack([point_cloud['R'], point_cloud['G'], point_cloud['B']])/255
         labels_full = point_cloud['label'].astype(np.int32)
 

@@ -44,15 +44,17 @@ class InterSingleObj3DSegDataset(Dataset):
 
         if self.crop:
             point_cloud = read_ply(os.path.join(self.scan_folder, scene_name, scene_name + '_crop_' + object_id + '.ply'))
-            coords_full = np.column_stack([point_cloud['x'], point_cloud['y'], point_cloud['z']]).astype(np.float64)
-            colors_full = np.column_stack([point_cloud['R'], point_cloud['G'], point_cloud['B']])/255
             labels_full = point_cloud['label'].astype(np.int32)
 
         else:
             point_cloud = read_ply(os.path.join(self.scan_folder, scene_name + '.ply'))
-            coords_full = np.column_stack([point_cloud['x'], point_cloud['y'], point_cloud['z']]).astype(np.float64)
-            colors_full = np.column_stack([point_cloud['R'], point_cloud['G'], point_cloud['B']])/255
             labels_full = (point_cloud['label'] == int(object_id)).astype(np.int32)
+
+        coords_x = point_cloud['x'] - point_cloud['x'].min()
+        coords_y = point_cloud['y'] - point_cloud['y'].min()
+        coords_z = point_cloud['z'] - point_cloud['z'].min()
+        coords_full = np.column_stack([coords_x, coords_y, coords_z]).astype(np.float32)
+        colors_full = np.column_stack([point_cloud['R'], point_cloud['G'], point_cloud['B']])/255
 
         if self.transforms:
             coords_full = self.augment(coords_full)
