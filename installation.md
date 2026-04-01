@@ -35,9 +35,7 @@ pip install pip==22.3
 ```
 We found the above steps are the easiest way to install Minkowski Engine for CUDA < 12.0. There are known issues on Minkowski Engine’s compatibility with CUDA ≥ 12.0, which may require specific modifications:
 
-https://github.com/NVIDIA/MinkowskiEngine/issues/594
-
-https://github.com/NVIDIA/MinkowskiEngine/issues/543
+https://github.com/NVIDIA/MinkowskiEngine/issues/601
 
 https://github.com/NVIDIA/MinkowskiEngine/issues/596
 
